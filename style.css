@@ -1,0 +1,40 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    text-align: center;
+    padding: 50px;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  input[type="number"] {
+    font-size: 1.5em;
+    padding: 10px;
+    width: 200px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  input[type="number"]:focus {
+    border-color: #0077cc;
+  }
+
+  #result {
+    font-size: 2em;
+    color: #0077cc;
+    font-weight: bold;
+  }
+
+  span::before {
+    content: " ";
+  }
+
+  br {
+    line-height: 2em;
+  }
