@@ -8,6 +8,9 @@ const symbols = {
   EUR: "€",
   GBP: "£",
   AUD: "A$",
+  CAD: "C$",
+  KRW: "₩",
+  CNY: "¥",
 };
 
 const API_KEY = "cbfc864ac16f33b7e9c81c6d"; // ここにAPIキーを入れてください
