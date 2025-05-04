@@ -13,7 +13,7 @@ const symbols = {
   CNY: "¥",
 };
 
-const API_KEY = "cbfc864ac16f33b7e9c81c6d"; // ここにAPIキーを入れてください
+const API_KEY = "API_KEY"; // ここにAPIキーを入れてください
 
 async function fetchRateAndConvert() {
   const currency = parseFloat(input.value); // 入力されたcurrencyの値を取得
