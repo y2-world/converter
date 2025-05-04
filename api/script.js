@@ -12,8 +12,7 @@ const symbols = {
   KRW: "₩",
   CNY: "¥",
 };
-
-const API_KEY = "API_KEY"; // ここにAPIキーを入れてください
+const API_KEY = EXCHANGERATE_API_KEY; // ここにAPIキーを入れてください
 
 async function fetchRateAndConvert() {
   const currency = parseFloat(input.value); // 入力されたcurrencyの値を取得
