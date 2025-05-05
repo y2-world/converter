@@ -3,6 +3,8 @@ const result = document.getElementById("result");
 const currencySelector = document.getElementById("currency");
 const symbolSpan = document.getElementById("symbol");
 
+result.textContent = 0; // 初期値を0に設定
+
 const symbols = {
   USD: "$",
   EUR: "€",
@@ -16,7 +18,6 @@ const API_KEY = EXCHANGERATE_API_KEY; // ここにAPIキーを入れてくださ
 
 async function fetchRateAndConvert() {
   const currency = parseFloat(input.value); // 入力されたcurrencyの値を取得
-  console.log(currency); // レスポンスをコンソールに表示
   const targetCurrency = currencySelector.value; // 選択された通貨を取得
 
   if (isNaN(currency)) {
