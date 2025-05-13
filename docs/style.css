@@ -51,6 +51,6 @@ label {
 @media (max-width: 480px) {
   input[type="text"],
   select {
-    width: 90%;
+    width: 70%;
   }
 }
