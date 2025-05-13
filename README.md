@@ -1,14 +1,26 @@
-# Currency Converter
-## デモ
-GitHub Pagesでホストされているデモページはこちらです：
-https://y2-world.github.io/converter/
+# 💱 通貨換算アプリ（Vanilla JavaScript版）
 
-## 使用方法
-JavaScriptの学習の一環としてより実用的で動的なシステムとして、リアルタイムで値が変わる通貨変換システムを作成しました。
-GitHub PagesではAPIキー漏洩懸念のため、APIを使用せずに固定値 ($1 = ￥142.80)にして公開おりすが、apiフォルダでは、Exchange Rate APIを使用しています。
-そちらでは、8通貨(米ドル、ユーロ、英ポンド、豪ドル、加ドル、ウォン、中国元、台湾元)から通貨を選択できるようになっております。
+JavaScriptの学習の一環として、より実用的で動的なシステムを目指し、**リアルタイムで通貨換算ができるアプリ**を作成しました。
 
-## テクノロジー
-HTML, CSS, JavaScript
+## 🔗 使用API
 
-使用API : https://www.exchangerate-api.com/
+本アプリでは、**[Frankfurter API](https://www.frankfurter.app/)** を使用しています。APIキー不要で、以下のような形式で為替レートを取得できます。
+
+## 🌍 対応通貨
+
+以下の8通貨に対応しています：
+
+- 米ドル（USD）
+- ユーロ（EUR）
+- 英ポンド（GBP）
+- 豪ドル（AUD）
+- カナダドル（CAD）
+- 韓国ウォン（KRW）
+- 中国元（CNY）
+- 台湾ドル（TWD）
+
+## 🛠 使用技術
+
+- HTML / CSS / JavaScript（Vanilla JS）
+- Fetch API を用いた外部API通信
+- DOM操作によるインタラクティブUI
