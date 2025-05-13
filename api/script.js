@@ -13,6 +13,7 @@ const symbols = {
   CAD: "C$",
   KRW: "₩",
   CNY: "¥",
+  TWD: "NT$",
 };
 const API_KEY = EXCHANGERATE_API_KEY; // ここにAPIキーを入れてください
 
