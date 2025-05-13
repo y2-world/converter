@@ -1,40 +1,56 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
-    text-align: center;
-    padding: 50px;
-  }
+  font-family: "Arial", sans-serif;
+  background-color: #f4f8fb;
+  color: #333;
+  text-align: center;
+  padding: 40px;
+}
 
-  h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #007acc;
+}
 
-  input[type="number"] {
-    font-size: 1.5em;
-    padding: 10px;
-    width: 200px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s;
-  }
+select,
+input[type="text"] {
+  font-size: 1.2em;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin: 10px;
+  width: 220px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
 
-  input[type="number"]:focus {
-    border-color: #0077cc;
-  }
+select:focus,
+input[type="text"]:focus {
+  border-color: #007acc;
+  outline: none;
+}
 
-  #result {
-    font-size: 2em;
-    color: #0077cc;
-    font-weight: bold;
-  }
+label {
+  font-weight: bold;
+  margin-right: 10px;
+}
 
-  span::before {
-    content: " ";
-  }
+#result {
+  font-size: 2em;
+  color: #007acc;
+  font-weight: bold;
+  margin-top: 20px;
+}
 
-  br {
-    line-height: 2em;
+#symbol {
+  font-size: 2em;
+  font-weight: bold;
+  color: #007acc;
+}
+
+@media (max-width: 480px) {
+  input[type="text"],
+  select {
+    width: 90%;
   }
+}
