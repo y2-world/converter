@@ -36,7 +36,7 @@ async function fetchRateAndConvert() {
 
     result.textContent = converted.toFixed(2);
   } catch (error) {
-    result.textContent = "取得失敗";
+    result.textContent = "";
     console.error("為替取得エラー:", error);
   }
 }
