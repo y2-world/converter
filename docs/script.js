@@ -20,14 +20,21 @@ const symbols = {
 
 async function fetchRate(inputValue, selectedCurrency) {
   // 為替レートを取得する関数
+  console.log(selectedCurrency);
   try {
-    const response = await fetch(
-      `https://api.frankfurter.app/latest?amount=${inputValue}&from=${selectedCurrency}&to=JPY`
-    );
-    return response; // レスポンスを返す
+    if (inputValue && selectedCurrency) {
+      const response = await fetch(
+        `https://api.frankfurter.app/latest?amount=${inputValue}&from=${selectedCurrency}&to=JPY`
+      );
+      return response; // レスポンスを返す
+    } else {
+      rate.textContent = ""; // 通貨が選択されていない場合のエラー
+      return null; // ここで処理を終了
+    }
   } catch (error) {
     rate.textContent = "Fetching Error"; // ローディング中のメッセージを表示
     console.error("為替取得エラー:", error); // エラーログを表示
+    return null;
   }
 }
 
@@ -42,17 +49,19 @@ async function fetchRateAndConvert() {
 
   try {
     const response = await fetchRate(1, selectedCurrency); // 為替レートを取得
-    console.log(response); // レスポンスデータをコンソールに表示
     const data = await response.json(); // レスポンスをJSON形式に変換
     const converted = data.rates.JPY; // JPYに変換された値を取得
     rate.textContent = `1 ${selectedCurrency} = ${converted} JPY`; // レートを表示
-    console.log(`1 ${selectedCurrency} = ${converted} JPY`); // コンソールにレートを表示
   } catch (error) {
-    rate.textContent = "Fetching Error"; // ローディング中のメッセージを表示
+     if (!selectedCurrency) {
+      rate.textContent = ""; // 通貨が選択されていない場合のエラー
+    } else {
+      rate.textContent = "Fetching Error"; // ローディング中のメッセージを表示
+    }
     console.error("為替取得エラー:", error); // エラーログを表示
   }
 
-  if (isNaN(currency)) {
+  if (isNaN(currency) || currency <= 0) {
     // 入力値が数値でない場合
     result.textContent = `${symbols.JPY}0`; // NaNの場合は0を表示
     return;
@@ -65,7 +74,11 @@ async function fetchRateAndConvert() {
 
     result.textContent = `${symbols.JPY}${converted.toFixed(2)}`; // JPYの通貨記号を表示
   } catch (error) {
-    result.textContent = "Fetching Error"; // ローディング中のメッセージを表示
+    if (!selectedCurrency) {
+      result.textContent = "通貨を選択してください。"; // 通貨が選択されていない場合のエラー
+    } else {
+      result.textContent = "Fetching Error"; // ローディング中のメッセージを表示
+    }
     console.error("為替取得エラー:", error); // エラーログを表示
   }
 }
