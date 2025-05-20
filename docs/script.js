@@ -41,7 +41,7 @@ async function fetchRate(inputValue, selectedCurrency) {
 async function fetchRateAndConvert() {
   // 為替レートを取得して変換する関数
 
-  result.style.color = "#007acc"; // エラーメッセージを赤色にする
+  rate.style.color = "black"; // エラーメッセージを黒にする
 
   const currency = parseFloat(input.value); // 入力値を数値に変換
   const selectedCurrency = currencySelector.value; // 選択された通貨を取得
@@ -77,8 +77,8 @@ async function fetchRateAndConvert() {
     result.textContent = `${symbols.JPY}${converted.toFixed(2)}`; // JPYの通貨記号を表示
   } catch (error) {
     if (!selectedCurrency) {
-      result.textContent = "通貨を選択してください。"; // 通貨が選択されていない場合のエラー
-      result.style.color = "#ff0000cc"; // エラーメッセージを赤色にする
+      rate.textContent = "通貨を選択してください。"; // 通貨が選択されていない場合のエラー
+      rate.style.color = "#ff0000cc"; // エラーメッセージを赤色にする
     } else {
       result.textContent = "Fetching Error"; // ローディング中のメッセージを表示
     }
